@@ -1,12 +1,11 @@
 // Assignment code here
 var characterLength = 8;
-var choiceArr = [];
+var choiceArray = [];
 
-
-var lowerCaseArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var upperCaseArr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var numberArr = ['0','1','2','3','4','5','6','7','8','9',];
-var specialCharArr = ['!','@','#','$','%','&','*','_','-','?',];
+var numericArray = ['0','1','2','3','4','5','6','7','8','9',];
+var lowerCaseArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var upperCaseArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var specialCharArray = ['!','@','#','$','%','&','*','_','-','?',];
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -31,8 +30,8 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
 var password = "";
 for(var i = 0; i < characterLength; i++) {
-  var randomLetter = Math.floor(Math.random() *choiceArr.length);
-  password = password + choiceArr[randomLetter];
+  var randomLetter = Math.floor(Math.random() *choiceArray.length);
+  password = password + choiceArray[randomLetter];
 }
 return password;
 }
@@ -45,16 +44,16 @@ function getPrompts(){
     return false;
   }
 if (confirm("Lowercase Letters?")) {
-    choiceArr = choiceArr.concat(lowerCaseArr);
+    choiceArray = choiceArray.concat(lowerCaseArray);
   }
   if (confirm("UpperCase Letters?")) {
-    choiceArr = choiceArr.concat(upperCaseArr);
+    choiceArray = choiceArray.concat(upperCaseArray);
   }
   if (confirm("Special Characters")) {
-    choiceArr = choiceArr.concat(specialCharArr);
+    choiceArray = choiceArray.concat(specialCharArray);
   }
   if (confirm("What about numbers?")) {
-    choiceArr = choiceArr.concat(numberArr);
+    choiceArray = choiceArray.concat(numericArray);
   }
-  return true;
+ 
 }
