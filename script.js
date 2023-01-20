@@ -55,5 +55,5 @@ if (confirm("Lowercase Letters?")) {
   if (confirm("What about numbers?")) {
     choiceArray = choiceArray.concat(numericArray);
   }
- 
+ return  true;
 }
